@@ -54,7 +54,7 @@ const Pokedex = () => {
 
     //Pagination
     const [page, setPage] = useState(1)
-    const [pokePerPage, setPokePerPage] = useState(8)
+    const [pokePerPage, setPokePerPage] = useState(16)
     const initialPoke = (page - 1) * pokePerPage
     const finalPoke = (page * pokePerPage)
     const maxPage = pokemons && Math.ceil(pokemons.length / pokePerPage)
