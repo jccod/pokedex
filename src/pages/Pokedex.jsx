@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PokeCard from '../components/Pokedex/PokeCard';
 import Pagination from '../components/Pokedex/Pagination';
+import title from '../assets/images/pokedex-title.png'
+
 
 const Pokedex = () => {
 
@@ -60,25 +62,26 @@ const Pokedex = () => {
 
 
     return (
-        <div>
-            <h2>Welcome {trainer}, here you can find your favorite Pokemon</h2>
-            <form onSubmit={handleSubmit}>
-                <input id='search' type="text" />
-                <button>Search</button>
-            </form>
-            <select onChange={handleChange}>
-                <option value='All pokemons'>All pokemons</option>
-                {
-                    types?.map(type => (
-                        <option key={type.url} value={type.url}>{type.name}</option>
-                    ))
-                }
-            </select>
-            <Pagination
-                page={page}
-                maxPage={maxPage}
-                setPage={setPage}
-            />
+        <div className='pokedex-container'>
+            <header className='page__header'>
+                <img className='header__img' src="title" alt="" />
+            </header>
+            <h2 className='welcome-text'><span className='welcome-name'>Welcome {trainer}, </span>here you can find your favorite Pokemon</h2>
+            <div className='search-container'>
+                <form className='search__form search__form--pokedex' onSubmit={handleSubmit}>
+                    <input className='search__input' id='search' type="text" />
+                    <button className='search__btn'>Search</button>
+                </form>
+                <select className='search__select' onChange={handleChange}>
+                    <option value='All pokemons'>All pokemons</option>
+                    {
+                        types?.map(type => (
+                            <option key={type.url} value={type.url}>{type.name}</option>
+                        ))
+                    }
+                </select>
+            </div>
+
             <div className='poke-container'>
                 {
                     pokemons?.slice(initialPoke, finalPoke).map(poke => (
@@ -89,7 +92,7 @@ const Pokedex = () => {
                     ))
                 }
             </div>
-            <Pagination
+            <Pagination 
                 page={page}
                 maxPage={maxPage}
                 setPage={setPage}

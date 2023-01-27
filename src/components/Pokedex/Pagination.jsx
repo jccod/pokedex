@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../App.css'
 
 const Pagination = ({page, maxPage, setPage}) => {
 
@@ -33,15 +34,15 @@ const Pagination = ({page, maxPage, setPage}) => {
 
 
     return (
-        <div>
-            <ul>
-            <li onClick={handlePrevious}>&#60;</li>
+        <div className='pagination'>
+            <ul className='pagination__container'>
+            <li className='pagination__controls' onClick={handlePrevious}>&#60;</li>
                 {
                     arrPages.map(e => (
-                        <li onClick={() => handlePage(e)} key={e}>{e + 1}</li>
+                        <li className='pagination__controls' onClick={() => handlePage(e)} key={e}>{e + 1}</li>
                     ))
                 }
-            <li onClick={handleNext}>&#62;</li>             
+            <li className='pagination__controls' onClick={handleNext}>&#62;</li>             
             </ul>
         </div>
     );

@@ -1,0 +1,253 @@
+:root {
+    /*------ Colors ------*/
+    --main-title-color: #FE1936;
+
+
+    /*------ Font Sizes ------*/
+    --h1-font-size: 3.2rem;
+
+
+}
+
+
+
+/*------ Home Page ------*/
+
+.home {
+    background-image: url(./assets/images/home-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home__img {
+    max-width: 42.25rem;
+}
+
+.home__title {
+    color: var(--main-title-color);
+    font-size: var(--h1-font-size);
+    margin-top: 3rem;
+}
+
+.home__text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+.search__form {
+    width: 41.3rem;
+    height: 4.25rem;
+    display: flex;
+    border: 2px solid #D93F3F;
+}
+
+.search__input {
+    height: 100%;
+    width: 75%;
+    font-size: 25px;
+    padding: 0 1.5rem;
+    border: none;
+}
+
+.search__btn {
+    display: block;
+    width: 25%;
+    height: 100%;
+    font-size: 25px;
+    background: #D93F3F;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.home__btn:hover {
+    background: #fa2d2d;
+}
+
+/*------ Pokedex ------*/
+
+.pokedex-container {
+    max-width: 1440px;
+    margin: auto;
+}
+
+.page__header {
+    border: 1px solid white;
+    height: 9.4rem;
+    background-image: url(./assets/images/hader-bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.welcome-text {
+    margin: 2rem 6rem;
+}
+
+.welcome-name {
+    color: #FE1936;
+}
+
+.search-container {
+    height: 50px;
+    margin: 0 6rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.search__form--pokedex {
+    height: 100%;
+}
+
+.search__select {
+    width: 24rem;
+    font-family: inherit;
+    font-size: 25px;
+    border: 2px solid #D93F3F;
+    padding: 0 1.5rem;
+}
+
+.poke-container {
+    margin: 3rem 6rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/*------ Pokecard -----*/
+
+.poke-card {
+    width: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 5px solid orange;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}
+
+.poke-card:hover {
+    transform: scale(1.03);
+}
+
+.poke-card:hover .poke-card__img {
+    transform: scale(1.2);
+}
+
+.poke-card__header {
+    width: 100%;
+    height: 140px ;
+    background: radial-gradient(circle, rgba(242,249,158,1) 0%, rgba(209,197,7,1) 54%);
+    display: flex;
+    justify-content: center;
+
+}
+
+.poke-card__img {
+    height: 180px;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.poke-card__info-container {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poke-card__name {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #303030;
+}
+
+.poke-card__type-list {
+    display: flex;
+    gap: 1rem;
+}
+
+.poke-card__type {
+    background: rgb(238, 237, 237);
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    border-radius: 5px;
+    color: #4F4F4F;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.poke-card__stats-container {
+    margin: 1.5rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 5px;
+    row-gap: 1rem;
+}
+
+.poke-card__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poke-card__stat-label {
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #707070;
+}
+
+.poke-card__stat-info {
+    font-size: 18px;
+    font-weight: 600;
+    color: #303030;
+}
+
+/*----- Pagination -----*/
+
+.pagination {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.pagination__container {
+    display: flex;
+    margin: auto;
+    gap: 1rem;
+    margin: 6rem auto;
+}
+
+.pagination__controls {
+    border: 1px solid lightgray;
+    background: lightgray;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pagination__controls:hover {
+    background: #D93F3F;
+    color: #fff;   
+}

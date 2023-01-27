@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './styles/pokeCard.css'
 
 
 const PokeCard = ({url}) => {
@@ -21,27 +20,27 @@ const PokeCard = ({url}) => {
     }
 
     return (
-        <article onClick={handleClic}>
-            <header>
-                <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+        <article className='poke-card' onClick={handleClic}>
+            <header className='poke-card__header'>
+                <img className='poke-card__img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
             </header>
-            <section>
-                <h3>{pokemon?.name}</h3>
-                <ul>
+            <section className='poke-card__info-container'>
+                <h3 className='poke-card__name'>{pokemon?.name}</h3>
+                <ul className='poke-card__type-list'>
                     {
                         pokemon?.types.map(type => (
-                            <li key={type.type.name}>{type.type.name}</li>
+                            <li  className='poke-card__type' key={type.type.name}>{type.type.name}</li>
                         ))
                     }
                 </ul>
             </section>
-            <footer>
-                <ul>
+            <footer className='poke-card__footer'>
+                <ul className='poke-card__stats-container'>
                     {
                         pokemon?.stats.map(stat => (
-                            <li key={stat.stat.name}>
-                                <span>{stat.stat.name}</span>
-                                <span>{stat.base_stat}</span>
+                            <li className='poke-card__stat' key={stat.stat.name}>
+                                <span className='poke-card__stat-label'>{stat.stat.name}</span>
+                                <span className='poke-card__stat-info'>{stat.base_stat}</span>
                             </li>
                         ))
 
